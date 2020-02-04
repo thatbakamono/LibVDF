@@ -110,7 +110,7 @@ namespace LibVDF
                         names.Push(checkedText.Substring(0, indexOfQuotationMark));
                         checkedText = checkedText.Substring(indexOfQuotationMark + 1);
 
-                        if (checkedText.TrimStart(' ').StartsWith("\""))
+                        if (checkedText.Trim().StartsWith("\""))
                         {
                             checkedText = checkedText.Substring(checkedText.Substring(1).IndexOf("\"") + 2);
 
