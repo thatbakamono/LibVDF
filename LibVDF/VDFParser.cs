@@ -116,15 +116,8 @@ namespace LibVDF
 
                             if (checkedText.Contains("\""))
                             {
-                                if (checkedText.CountOf('\"') == 1)
-                                {
-                                    indexOfQuotationMark = checkedText.IndexOf("\"");
-                                    values.Add(names.Pop(), checkedText.Substring(0, indexOfQuotationMark));
-                                }
-                                else
-                                {
-                                    throw new SyntaxErrorException($"Line: {lineNumber}, found too many quotation marks", lineNumber);
-                                }
+                                indexOfQuotationMark = checkedText.LastIndexOf("\"");
+                                values.Add(names.Pop(), checkedText.Substring(0, indexOfQuotationMark));
                             }
                             else
                             {
